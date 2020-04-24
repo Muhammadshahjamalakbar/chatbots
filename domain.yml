@@ -1,0 +1,66 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- deny
+- search_provider
+- inform
+- mood_great
+- mood_unhappy
+- bot_challenge
+- thanks
+entities:
+- location
+- facility_id
+- facility_type
+slots:
+  facility_address:
+    type: unfeaturized
+  facility_id:
+    type: unfeaturized
+  facility_type:
+    type: unfeaturized
+  location:
+    type: unfeaturized
+responses:
+  utter_address:
+  - text: The address is {facility_address}.
+  utter_ask_facility_type:
+  - text: 'Choose one of the following to search for: hospital, nursing home, or home
+      health agency.'
+  utter_ask_location:
+  - text: Tell me the city name
+  utter_cheer_up:
+  - image: https://cdn.imgbin.com/21/2/24/imgbin-humour-funny-face-youtube-joke-laughter-youtube-7pbkeb3NZ0gWr4BpTJpsQxkLF.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_goodbye:
+  - text: Talk to you later!
+  - text: Have a good day.
+  - text: Until next time!
+  utter_greet:
+  - text: Hi. What are you looking for?
+  - text: 'Hey there! Please choose one of the healthcare facility options:'
+  - text: Hello! What can I help you find today?
+  utter_happy:
+  - text: Great, carry on!
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+actions:
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_iamabot
+- utter_ask_location
+- utter_ask_facility_type
+- find_facility_types
+- find_healthcare_address
+- utter_address
+forms:
+- facility_form
